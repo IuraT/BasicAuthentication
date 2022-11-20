@@ -1,0 +1,4 @@
+<h1>You are logged in as:  </h1>
+<%= current_user.name %>
+
+<%= link_to "Sign out", logout_path, data: { "turbo-method": :delete } %>
