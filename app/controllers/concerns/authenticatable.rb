@@ -1,4 +1,4 @@
-class Authenticatable
+module Authenticatable
   extend ActiveSupport::Concern
 
   included do
@@ -12,6 +12,10 @@ class Authenticatable
 
   def logout
     reset_session
+  end
+
+  def redirect_authenticated
+    redirect_to root_path if current_user
   end
 
   private
