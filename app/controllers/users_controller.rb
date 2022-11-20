@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :redirect_authenticated, only: [:create, :new]
+  before_action :redirect_authenticated, only: %i[create new]
 
   def new
     @user = User.new
